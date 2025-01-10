@@ -1,0 +1,1323 @@
+#include <iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+int main(){
+       
+ int points=0;    
+ string option,name,Level;
+ cout<<"Enter your name :";
+ getline(cin,name);
+ cout<<"__________________________________________________________________"<<endl;
+ cout<<"Welcome to Mathematics quiz game "<<name << endl;
+
+ cout<<"__________________________________________________________________"<<endl;
+ back:
+ cout<<"---------------------- Mathematics Quiz Game----------------------"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ cout<<"Press '0' for exiting game."<<endl;
+ cout<<"Press '1' for starting game."<<endl;
+ cin>>option;
+ while(option!="0" || option!="1" || option>="A" && option<="Z" || option>="a" && option<="z" || option>="!" && option<="/" || option>="<" && option<="@" || option>="{" && option<="`" || option>="{" && option<="~"){
+ if(option=="0" || option=="1"){
+        break;
+    }
+ cout<<"Invalid input! Please select from option  0 , 1 ."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    cin>>option;
+}
+if(option=="0"){
+    exit:
+    exit(0);
+}
+else if(option=="1"){
+    goto start;
+}
+ start:
+ cout<<"Enter Level '1' for Easier Level"<<endl;
+ cout<<"Enter Level '2' for Medium Level"<<endl;
+ cout<<"Enter Level '3' for Harder Level"<<endl;
+ cout<<"               OR               "<<endl;
+ cout<<"If you want to go back to main screen, Press '4' "<<endl;
+ cin>>Level;
+ while(Level!="1" || Level!="2" || Level!="3" || Level!="4" || Level>="A" && Level<="Z" || Level>="a" && Level<="z" || Level>="!" && Level<="/" || Level>="<" && Level<="@" || Level>="{" && Level<="`" || Level>="{" && Level<="~"){
+ if(Level=="1" || Level=="2" || Level=="3" || Level=="4"){
+        break;
+    }
+ cout<<"Invalid input! Please select from level 1 , 2 , 3 OR Press 4 for going back to main screen."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    cin>>Level;
+}
+if( Level=="4"){
+    goto back;
+}
+
+else if( Level=="1" )
+{
+   
+cout<<"You must follow these rules before entering this quiz"<<endl;
+cout<<"Rule no.1:- You must not cheat during your Quiz"<<endl;
+cout<<"Rule no.2:- You must select correct answer"<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+cout<<"Are you ready for the Quiz"<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    break;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}
+level1 :
+points=0;
+ char arr[200];
+    ifstream in;
+    ofstream out;
+    in.open("level1.txt");
+    if(!out || !in){
+        cout<<"Files were not found"<<endl;
+    }
+    else{
+    while (in.eof()==0){
+///////////////////////////Question no.1///////////////////////////
+
+ in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ 
+while(option!="A" && option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="D" || option=="d"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" && option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.2///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ 
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="C" || option=="c"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.3///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="C" || option=="c" || option=="B" ||
+       option=="b" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="A" || option=="a"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.4///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ 
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="D" ||
+       option=="d" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="B" || option=="b"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.5///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="C" || option=="c"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.6///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ 
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="D" || option=="d" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="A" || option=="a"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.7///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="D" || option=="d" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="A" || option=="a"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.8///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="D" ||
+       option=="d" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="B" || option=="b"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.9///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="D" || option=="d"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.10///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="C" || option=="c"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+// Now counting total points...
+
+points=points*10;
+if(points<50){
+    cout<<"Sorry! You falied. Better try next time."<<endl;
+    cout<<"Your Score is "<<points;
+    cout<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+    cout<<"Do you want to play this level again!"<<endl;
+    cout<<"choose 'Yes' or 'No' "<<endl;
+ cout<<"__________________________________________________________________"<<endl;    
+    cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    goto level1;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}
+}
+
+else if(points>=50 && points<90){
+    cout<<"Congratulation! You passed."<<endl;
+    cout<<"Your Score is "<<points;
+    cout<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+    cout<<"Do you want to play this level again!"<<endl;
+    cout<<"choose 'Yes' or 'No' "<<endl;
+ cout<<"__________________________________________________________________"<<endl;    
+    cin>>option;
+     if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    goto level1;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}
+}
+else{
+  cout<<"Excellent! you rocked this level."<<endl;
+  cout<<"Your Score is "<<points;
+   cout<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+    cout<<"Do you want to play this level again!"<<endl;
+    cout<<"choose 'Yes' or 'No' "<<endl;
+ cout<<"__________________________________________________________________"<<endl;    
+    cin>>option;
+     if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    goto level1;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}
+}
+}
+}
+}
+
+else if( Level=="2" )
+{
+   
+cout<<"You must follow these rules before entering this quiz"<<endl;
+cout<<"Rule no.1:- You must not cheat during your Quiz"<<endl;
+cout<<"Rule no.2:- You must select correct answer"<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+cout<<"Are you ready for the Quiz"<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    break;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}
+level2 :
+points=0;
+char arr[200];
+    ifstream in;
+    ofstream out;
+    in.open("level2.txt");
+    if(!out || !in){
+        cout<<"Files were not found"<<endl;
+    }
+    else{
+    while (in.eof()==0){
+///////////////////////////Question no.1///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="D" || option=="d" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="A" || option=="a"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.2///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="D" ||
+       option=="d" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="B" || option=="b"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.3///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="D" || option=="d"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.4///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="D" || option=="d" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="A" || option=="a"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.5///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="C" || option=="c"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.6///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="D" || option=="d" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="A" || option=="a"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.7///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="D" ||
+       option=="d" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="B" || option=="b"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.8///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="D" || option=="d"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.9///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="C" || option=="c"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.10///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="C" || option=="c"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+
+points=points*10;
+if(points<50){
+    cout<<"Sorry! You falied. Better try next time."<<endl;
+    cout<<"Your Score is "<<points;
+    cout<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+    cout<<"Do you want to play this level again!"<<endl;
+    cout<<"choose 'Yes' or 'No' "<<endl;
+ cout<<"__________________________________________________________________"<<endl;    
+    cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    goto level2;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}  
+   
+}
+else if(points>=50 && points<90){
+    cout<<"Congratulation! You passed."<<endl;
+    cout<<"Your Score is "<<points;
+    cout<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+    cout<<"Do you want to play this level again!"<<endl;
+    cout<<"choose 'Yes' or 'No' "<<endl;
+ cout<<"__________________________________________________________________"<<endl;    
+    cin>>option;
+     if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    goto level2;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}
+   
+}
+else{
+  cout<<"Excellent! you rocked this level."<<endl;
+   cout<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+    cout<<"Do you want to play this level again!"<<endl;
+    cout<<"choose 'Yes' or 'No' "<<endl;
+ cout<<"__________________________________________________________________"<<endl;    
+    cin>>option;
+     if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    goto level2;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}
+}
+}
+}
+}
+
+else if( Level=="3" )
+{
+   
+   cout<<"You must follow these rules before entering this quiz"<<endl;
+cout<<"Rule no.1:- You must not cheat during your Quiz"<<endl;
+cout<<"Rule no.2:- You must select correct answer"<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+cout<<"Are you ready for the Quiz"<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    break;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}
+level3 :
+points=0;
+char arr[200];
+    ifstream in;
+    ofstream out;
+    in.open("level3.txt");
+    if(!out || !in){
+        cout<<"Files were not found"<<endl;
+    }
+    else{
+    while (in.eof()==0){
+///////////////////////////Question no.1///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ 
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="C" || option=="c"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.2///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="D" || option=="d"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.3///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" ?"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="D" || option=="d" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="A" || option=="a"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.4///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="D" || option=="d"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.5///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="D" ||
+       option=="d" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="B" || option=="b"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.6///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="D" || option=="d" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="A" || option=="a"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.7///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ 
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="C" ||
+       option=="c" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="B" || option=="b"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.8///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="C" || option=="c"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.9///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'$');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="D" || option=="d"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="C" || option=="c"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+///////////////////////////Question no.10///////////////////////////
+
+in.getline(arr,200,'?');
+ cout<<arr<<" "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+ in.getline(arr,200,'/');
+ cout<<arr<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+
+while(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d"){
+     if(option=="A" || option=="a" || option=="B" ||
+       option=="b" || option=="C" || option=="c"  ){
+cout<<"Wrong Answer!"<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+break;
+}
+else if(option=="D" || option=="d"){
+    cout<<"Great!Correct Answer."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+    points++;
+    break;
+}
+else if(option!="A" || option!="a" || option!="B" && option!="b" || option!="C" && option!="c" || option!="D" && option!="d" ){
+cout<<"Invalid input! please select correct option."<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+}
+}
+points=points*10;
+if(points<50){
+    cout<<"Sorry! You falied. Better try next time."<<endl;
+    cout<<"Your Score is "<<points;
+    cout<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+    cout<<"Do you want to play this level again!"<<endl;
+    cout<<"choose 'Yes' or 'No' "<<endl;
+ cout<<"__________________________________________________________________"<<endl;    
+    cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    goto level3;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}  
+   
+}
+else if(points>=50 && points<90){
+    cout<<"Congratulation! You passed."<<endl;
+    cout<<"Your Score is "<<points;
+    cout<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+    cout<<"Do you want to play this level again!"<<endl;
+    cout<<"choose 'Yes' or 'No' "<<endl;
+ cout<<"__________________________________________________________________"<<endl;    
+    cin>>option;
+     if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    goto level3;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}
+   
+}
+else{
+  cout<<"Excellent! you rocked this level."<<endl;
+  cout<<"Your Score is "<<points;
+   cout<<endl;
+ cout<<"__________________________________________________________________"<<endl;  
+    cout<<"Do you want to play this level again!"<<endl;
+    cout<<"choose 'Yes' or 'No' "<<endl;
+ cout<<"__________________________________________________________________"<<endl;    
+    cin>>option;
+     if(option=="NO" || option=="no"){
+  goto start;  
+}
+else if(option!="NO" || option!="no" )
+{
+    while(true){
+ if(option=="YES" || option=="yes"){
+    goto level3;
+}
+cout<<"Invalid input! Please choose corect option."<<endl;
+cout<<" YES  OR  NO "<<endl;
+ cout<<"__________________________________________________________________"<<endl;
+cin>>option;
+ if(option=="NO" || option=="no"){
+  goto start;  
+}
+}
+}
+}
+}
+}
+}
+
+    return 0;
+}
